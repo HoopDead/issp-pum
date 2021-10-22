@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">CounterApp</string>
-    <string name="counter_value">0</string>
-    <string name="button_count_reset_text">Reset</string>
-    <string name="button_count_up_text">Count Up</string>
-    <string name="button_count_down_text">Count Down</string>
-</resources>
