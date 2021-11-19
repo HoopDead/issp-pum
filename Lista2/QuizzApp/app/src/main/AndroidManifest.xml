@@ -10,8 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp">
         <activity
+            android:name=".CheatActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Cheating"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

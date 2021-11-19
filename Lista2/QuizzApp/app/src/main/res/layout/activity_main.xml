@@ -15,29 +15,35 @@
         android:layout_weight="1"></TextView>
 
     <TableRow
+        android:id="@+id/submitButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/buttonFalse"
             android:layout_marginEnd="1pt"
             android:layout_marginBottom="5pt"
             android:layout_weight="1"
             android:background="#AE2B2B"
             android:textColor="#ffffff"
             android:text="FALSE"
-            android:textSize="25sp"></Button>
+            android:textSize="25sp"
+            android:onClick="submitAnswer"></Button>
 
         <Button
+            android:id="@+id/buttonTrue"
             android:layout_marginEnd="1pt"
             android:layout_marginBottom="5pt"
             android:layout_weight="1"
             android:background="#19A31B"
             android:textColor="#ffffff"
             android:text="TRUE"
-            android:textSize="25sp"></Button>
+            android:textSize="25sp"
+            android:onClick="submitAnswer"></Button>
     </TableRow>
 
     <TableRow
+        android:id="@+id/changeButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -55,6 +61,73 @@
             android:layout_marginEnd="1pt"
             android:text="NEXT"
             android:onClick="nextQuestion">
+        </Button>
+    </TableRow>
+
+    <TextView
+        android:id="@+id/summaryDisplay"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_weight="1"></TextView>
+
+    <TableRow
+        android:id="@+id/resetButtonRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <Button
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:layout_marginEnd="1pt"
+            android:text="RESET"
+            android:onClick="resetQuiz">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/searchButtonRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:layout_marginEnd="1pt"
+            android:text="SEARCH"
+            android:onClick="searchAnswer">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/showAnswerButtonRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonShowAnswer"
+            android:layout_weight="1"
+            android:textSize="5pt"
+            android:layout_marginEnd="1pt"
+            android:text="SHOW ANSWER"
+            android:onClick="showAnswer">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/cheatButtonRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:layout_marginEnd="1pt"
+            android:text="CHEAT"
+            android:onClick="startCheatActivity">
         </Button>
     </TableRow>
 </TableLayout>
