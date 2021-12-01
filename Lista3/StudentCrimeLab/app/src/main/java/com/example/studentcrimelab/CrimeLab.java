@@ -45,4 +45,21 @@ public class CrimeLab {
 
         return null;
     }
+
+    public void addCrime(Crime newCrime)
+    {
+        mCrimes.add(newCrime);
+    }
+    
+    public void deleteCrime(UUID id)
+    {
+        for (Crime c : mCrimes)
+        {
+            if (c.getId() == id)
+            {
+                mCrimes.remove(c);
+                break;
+            }
+        }
+    }
 }

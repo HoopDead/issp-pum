@@ -17,8 +17,13 @@ public class Crime {
     }
 
     public void seTitle(String string) { this.mTitle = string; }
+    public String getTitle() { return this.mTitle; }
 
     public void setSolved(boolean solved) { this.mSolved = solved; }
+    public boolean isSolved() { return this.mSolved; }
+
+    public void setDate(Date newDate) { this.mDate = newDate; }
+    public Date getDate() { return this.mDate; }
 
     public UUID getId() {  return this.mId; }
 }
