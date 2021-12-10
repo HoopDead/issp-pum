@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrimeActivity">
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvUUID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="UUID"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <EditText
+            android:id="@+id/etCrimeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:text="Title"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bCrimeDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select a date"
+            android:layout_weight="1"
+            android:onClick="buttonCrimeDateClicked"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <CheckBox
+            android:id="@+id/cbCrimeSolved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Solved"
+            android:layout_margin="5sp"
+            android:onClick="checkboxCrimeSolvedClicked">
+        </CheckBox>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bCrimeAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add Crime"
+            android:onClick="buttonCrimeAddClicked">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bCrimeDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete Crime"
+            android:onClick="buttonCrimeDeleteClicked">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bSwitchToFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Switch to First"
+            android:onClick="buttonSwitchToFirstClicked">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bSwitchToLast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Switch to Last"
+            android:onClick="buttonSwitchToLastClicked">
+        </Button>
+    </TableRow>
+</TableLayout>
