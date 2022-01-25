@@ -21,7 +21,15 @@
         android:text="Send Factorial"
         android:layout_alignParentBottom="true"
         android:onClick="buttonSendArgumentClicked">
-
     </Button>
+    
+    <TextView
+        android:id="@+id/tvFactorialResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Result"
+        android:gravity="center"
+        android:layout_alignParentTop="@+id/etFactorialInput">
+    </TextView>
 
 </RelativeLayout>

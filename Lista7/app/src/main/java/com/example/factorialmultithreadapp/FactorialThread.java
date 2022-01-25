@@ -10,24 +10,24 @@ public class FactorialThread {
 
     private static int CHUNK_SIZE = 20;
 
-    public BigInteger fac(int providedNumber) {
+    public BigInteger factorialOf(int providedNumber) {
+        ExecutorService executor;
         if (providedNumber >= 20)
         {
-            System.out.println("Running on: " + Runtime.getRuntime().availableProcessors() + " threads.");
-            ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-            try {
-                return IntStream.rangeClosed(0, (providedNumber - 1) / CHUNK_SIZE)
-                        .mapToObj(val -> executor.submit(() -> prod(leftBound(val), rightBound(val, providedNumber))))
-                        .map(future -> valueOf(future))
-                        .reduce(BigInteger.ONE, BigInteger::multiply);
-            } finally {
-                executor.shutdown();
-            }
+            executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         }
         else
         {
-            System.out.println("Running on ONE thread.");
-            return prod(1, providedNumber);
+            executor = Executors.newFixedThreadPool(1);
+        }
+        System.out.println("Running on: " + Runtime.getRuntime().availableProcessors() + " threads.");
+        try {
+            return IntStream.rangeClosed(0, (providedNumber - 1) / CHUNK_SIZE)
+                    .mapToObj(val -> executor.submit(() -> calculate(leftBound(val), rightBound(val, providedNumber))))
+                    .map(future -> getFuture(future))
+                    .reduce(BigInteger.ONE, BigInteger::multiply);
+        } finally {
+            executor.shutdown();
         }
     }
 
@@ -39,7 +39,7 @@ public class FactorialThread {
         return Math.min((chunkNo + 1) * CHUNK_SIZE, max);
     }
 
-    private static BigInteger valueOf(Future<BigInteger> future) {
+    private static BigInteger getFuture(Future<BigInteger> future) {
         try {
             return future.get();
         } catch (Exception e) {

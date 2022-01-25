@@ -169,7 +169,6 @@ public class CrimeActivity extends AppCompatActivity implements DatePickerDialog
         {
             if (requestCode == CAMERA_INTENT)
             {
-                System.out.println("Activity result setting image.");
                 Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
                 ivCrimeImage.setImageBitmap(thumbnail);
                 mImagePath = savePicture(thumbnail);

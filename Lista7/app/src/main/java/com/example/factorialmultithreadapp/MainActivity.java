@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.math.BigInteger;
 import java.util.concurrent.ExecutorService;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etFactorialInput;
     private Button bSendArgument;
+    private TextView tvFactorialResult;
 
     public static BigInteger sResult;
     private FactorialThread mFactorialThread;
@@ -40,16 +42,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Asign the button.
         bSendArgument = findViewById(R.id.bSendArgument);
+
+        // Asign the result.
+        tvFactorialResult = findViewById(R.id.tvFactorialResult);
     }
 
     public void buttonSendArgumentClicked(View view) throws InterruptedException {
         int providedNumber = Integer.valueOf(etFactorialInput.getText().toString());
-        sResult = new BigInteger(String.valueOf(1));
+        sResult = new BigInteger(String.valueOf(mFactorialThread.factorialOf(providedNumber)));
 
         System.out.println("Value of providedNumber is: " + providedNumber);
-        System.out.println("Getting value of runnable threads: " + Runtime.getRuntime().availableProcessors());
 
-        System.out.println("Res: " + mFactorialThread.fac(providedNumber));
+        System.out.println("Res: " + mFactorialThread.factorialOf(providedNumber));
+
+        tvFactorialResult.setText(sResult.toString());
+
 
 
         // int numberOfThreads = Runtime.getRuntime().availableProcessors();
